@@ -86,6 +86,29 @@ body {
   box-shadow: 0 0 0 3px var(--primary-soft);
 }
 
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.filter {
+  border: 1px solid var(--border);
+  background: #f8f9fd;
+  color: var(--muted);
+  padding: 6px 12px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.filter.active,
+.filter:hover {
+  color: var(--primary);
+  border-color: var(--primary);
+  background: var(--primary-soft);
+}
+
 .tree {
   display: flex;
   flex-direction: column;
@@ -185,9 +208,50 @@ body {
   margin-top: 6px;
 }
 
+.workspace__overview {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  background: var(--panel);
+  padding: 18px 20px;
+  border-radius: 20px;
+  box-shadow: var(--shadow);
+}
+
+.overview__stats {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.overview__stats div {
+  display: grid;
+  gap: 6px;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.overview__stats strong {
+  color: var(--text);
+  font-size: 16px;
+}
+
+.overview__actions {
+  display: flex;
+  gap: 10px;
+}
+
 .workspace__actions {
   display: flex;
   gap: 12px;
+}
+
+.workspace__content {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 280px;
+  gap: 24px;
+  align-items: start;
 }
 
 button {
@@ -339,6 +403,115 @@ button.ghost {
   color: var(--primary);
 }
 
+.note__editor {
+  display: grid;
+  gap: 16px;
+  padding: 18px 20px;
+  border-radius: 20px;
+  border: 1px solid var(--border);
+  background: #f9faff;
+}
+
+.note__tabs {
+  display: flex;
+  gap: 8px;
+}
+
+.note__tabs .tab {
+  border: none;
+  background: #ffffff;
+  padding: 8px 14px;
+  border-radius: 999px;
+  cursor: pointer;
+  color: var(--muted);
+  transition: all 0.2s ease;
+}
+
+.note__tabs .tab.active,
+.note__tabs .tab:hover {
+  color: var(--primary);
+  background: var(--primary-soft);
+}
+
+.note__panel {
+  display: none;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.note__panel.active {
+  display: block;
+}
+
+.note__panel ul {
+  padding-left: 18px;
+  display: grid;
+  gap: 6px;
+}
+
+.relation__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.relation__list span {
+  padding: 6px 10px;
+  border-radius: 10px;
+  border: 1px dashed var(--border);
+  color: var(--text);
+  background: #ffffff;
+}
+
+.output {
+  display: grid;
+  gap: 16px;
+}
+
+.output__card {
+  background: var(--panel);
+  border-radius: 20px;
+  padding: 16px 18px;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  display: grid;
+  gap: 12px;
+}
+
+.output__card h4 {
+  font-size: 16px;
+}
+
+.output__card p {
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+.output__actions {
+  display: flex;
+  gap: 8px;
+}
+
+.output__files {
+  display: grid;
+  gap: 8px;
+}
+
+.output__files span {
+  padding: 8px 12px;
+  border-radius: 12px;
+  background: #f7f8fd;
+  color: var(--text);
+}
+
+.output__timeline {
+  list-style: none;
+  display: grid;
+  gap: 8px;
+  color: var(--muted);
+  font-size: 13px;
+}
+
 .note__timeline {
   display: grid;
   gap: 18px;
@@ -402,6 +575,19 @@ button.ghost {
   .sidebar {
     position: sticky;
     top: 0;
+  }
+
+  .workspace__overview {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .overview__stats {
+    grid-template-columns: 1fr;
+  }
+
+  .workspace__content {
+    grid-template-columns: 1fr;
   }
 
   .note__hero {
