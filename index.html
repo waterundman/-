@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NoteTree - 笔记管理系统</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap"
+    rel="stylesheet"
+  />
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brand__icon">NT</div>
+        <div>
+          <h1>NoteTree</h1>
+          <p>树状笔记工作台</p>
+        </div>
+      </div>
+      <div class="search">
+        <input type="search" placeholder="搜索笔记或标签" />
+      </div>
+      <nav class="tree">
+        <div class="tree__group">
+          <button class="tree__node" data-node="0">
+            <span>📁 产品规划</span>
+            <span class="badge">5</span>
+          </button>
+          <div class="tree__children">
+            <button class="tree__leaf" data-note="需求梳理">需求梳理.docx</button>
+            <button class="tree__leaf" data-note="版本节奏">版本节奏.docx</button>
+            <button class="tree__leaf" data-note="用户画像">用户画像.docx</button>
+            <button class="tree__leaf" data-note="竞品拆解">竞品拆解.docx</button>
+            <button class="tree__leaf" data-note="关键里程碑">关键里程碑.docx</button>
+          </div>
+        </div>
+        <div class="tree__group">
+          <button class="tree__node" data-node="1">
+            <span>📁 设计素材</span>
+            <span class="badge">3</span>
+          </button>
+          <div class="tree__children">
+            <button class="tree__leaf" data-note="色彩规范">色彩规范.docx</button>
+            <button class="tree__leaf" data-note="动效灵感">动效灵感.docx</button>
+            <button class="tree__leaf" data-note="组件库存">组件库存.docx</button>
+          </div>
+        </div>
+        <div class="tree__group">
+          <button class="tree__node" data-node="2">
+            <span>📁 会议纪要</span>
+            <span class="badge">4</span>
+          </button>
+          <div class="tree__children">
+            <button class="tree__leaf" data-note="周会纪要">周会纪要.docx</button>
+            <button class="tree__leaf" data-note="评审复盘">评审复盘.docx</button>
+            <button class="tree__leaf" data-note="访谈整理">访谈整理.docx</button>
+            <button class="tree__leaf" data-note="行动清单">行动清单.docx</button>
+          </div>
+        </div>
+      </nav>
+    </aside>
+
+    <main class="workspace">
+      <header class="workspace__header">
+        <div>
+          <h2 id="note-title">需求梳理.docx</h2>
+          <p id="note-meta">2024-02-08 · 产品规划</p>
+        </div>
+        <div class="workspace__actions">
+          <button class="ghost">导出</button>
+          <button class="primary">新建笔记</button>
+        </div>
+      </header>
+
+      <section class="note">
+        <div class="note__hero">
+          <div>
+            <p class="label">核心概览</p>
+            <h3>树状结构让 Word 笔记一目了然</h3>
+            <p>
+              通过层级化的树状导航，将不同 Word 笔记文件串联为清晰的知识地图，
+              并支持标签、搜索与快速跳转。
+            </p>
+          </div>
+          <div class="note__status">
+            <div>
+              <span>总笔记</span>
+              <strong>32</strong>
+            </div>
+            <div>
+              <span>今日更新</span>
+              <strong>6</strong>
+            </div>
+            <div>
+              <span>关联标签</span>
+              <strong>12</strong>
+            </div>
+          </div>
+        </div>
+
+        <div class="note__cards">
+          <article>
+            <h4>动效体验</h4>
+            <p>柔和的光影与微动效提升操作反馈，保持界面简约且精致。</p>
+          </article>
+          <article>
+            <h4>文件预览</h4>
+            <p>支持 Word 文件一键预览，减少频繁跳转，提升阅读效率。</p>
+          </article>
+          <article>
+            <h4>跨文件关联</h4>
+            <p>通过关联标签和引用建立笔记链接，形成结构化知识体系。</p>
+          </article>
+        </div>
+
+        <div class="note__timeline">
+          <div class="timeline__item">
+            <div class="dot"></div>
+            <div>
+              <h5>建立笔记树</h5>
+              <p>拖拽文件即可生成树状结构，自动同步文件夹层级。</p>
+            </div>
+          </div>
+          <div class="timeline__item">
+            <div class="dot"></div>
+            <div>
+              <h5>管理关联关系</h5>
+              <p>支持跨文件引用与快速跳转，提升多项目协作效率。</p>
+            </div>
+          </div>
+          <div class="timeline__item">
+            <div class="dot"></div>
+            <div>
+              <h5>动效与主题</h5>
+              <p>提供深浅主题与动效切换，兼顾专注与审美。</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
