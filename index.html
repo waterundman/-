@@ -25,12 +25,6 @@
       <div class="search">
         <input type="search" placeholder="搜索笔记或标签" />
       </div>
-      <div class="filters">
-        <button class="filter active" data-filter="all">全部</button>
-        <button class="filter" data-filter="favorite">收藏</button>
-        <button class="filter" data-filter="recent">最近更新</button>
-        <button class="filter" data-filter="shared">共享协作</button>
-      </div>
       <nav class="tree">
         <div class="tree__group">
           <button class="tree__node" data-node="0">
@@ -78,34 +72,12 @@
           <p id="note-meta">2024-02-08 · 产品规划</p>
         </div>
         <div class="workspace__actions">
-          <button class="ghost" id="export-button">导出</button>
-          <button class="primary" id="new-note-button">新建笔记</button>
+          <button class="ghost">导出</button>
+          <button class="primary">新建笔记</button>
         </div>
       </header>
 
-      <section class="workspace__overview">
-        <div class="overview__stats">
-          <div>
-            <span>空间容量</span>
-            <strong>8.4 GB / 32 GB</strong>
-          </div>
-          <div>
-            <span>本周新增</span>
-            <strong>14</strong>
-          </div>
-          <div>
-            <span>共享协作</span>
-            <strong>5 个项目</strong>
-          </div>
-        </div>
-        <div class="overview__actions">
-          <button class="ghost" id="toggle-favorite">收藏笔记</button>
-          <button class="primary" id="generate-output">生成输出</button>
-        </div>
-      </section>
-
-      <div class="workspace__content">
-        <section class="note">
+      <section class="note">
         <div class="note__hero">
           <div>
             <p class="label">核心概览</p>
@@ -131,7 +103,7 @@
           </div>
         </div>
 
-        <div class="note__cards" id="note-cards">
+        <div class="note__cards">
           <article>
             <h4>动效体验</h4>
             <p>柔和的光影与微动效提升操作反馈，保持界面简约且精致。</p>
@@ -144,45 +116,6 @@
             <h4>跨文件关联</h4>
             <p>通过关联标签和引用建立笔记链接，形成结构化知识体系。</p>
           </article>
-        </div>
-
-        <div class="note__content">
-          <h4>当前笔记概要</h4>
-          <p id="note-summary">
-            请选择左侧笔记，右侧将展示对应的 Word 文件概览内容与输出信息。
-          </p>
-          <div class="note__tags" id="note-tags">
-            <span>#需求</span>
-            <span>#规划</span>
-            <span>#团队</span>
-          </div>
-        </div>
-
-        <div class="note__editor">
-          <div class="note__tabs">
-            <button class="tab active" data-tab="outline">内容大纲</button>
-            <button class="tab" data-tab="details">关键细节</button>
-            <button class="tab" data-tab="relations">关联笔记</button>
-          </div>
-          <div class="note__panel active" data-panel="outline">
-            <ul id="note-outline">
-              <li>梳理核心问题与目标。</li>
-              <li>划分关键阶段与负责人。</li>
-              <li>确认里程碑与验收标准。</li>
-            </ul>
-          </div>
-          <div class="note__panel" data-panel="details">
-            <p id="note-details">
-              这里展示与该笔记相关的补充说明、会议结论和对外输出要点。
-            </p>
-          </div>
-          <div class="note__panel" data-panel="relations">
-            <div class="relation__list" id="note-relations">
-              <span>竞品拆解.docx</span>
-              <span>用户画像.docx</span>
-              <span>版本节奏.docx</span>
-            </div>
-          </div>
         </div>
 
         <div class="note__timeline">
@@ -208,37 +141,7 @@
             </div>
           </div>
         </div>
-        </section>
-
-        <aside class="output">
-          <div class="output__card">
-            <h4>输出预览</h4>
-            <p id="output-preview">
-              点击“生成输出”即可生成对外分享的摘要文本。
-            </p>
-            <div class="output__actions">
-              <button class="ghost" id="copy-output">复制内容</button>
-              <button class="primary" id="share-output">生成分享链接</button>
-            </div>
-          </div>
-          <div class="output__card">
-            <h4>关联文件</h4>
-            <div class="output__files">
-              <span>需求梳理.docx</span>
-              <span>周会纪要.docx</span>
-              <span>行动清单.docx</span>
-            </div>
-          </div>
-          <div class="output__card">
-            <h4>动态记录</h4>
-            <ul class="output__timeline" id="activity-log">
-              <li>09:20 更新了需求拆解</li>
-              <li>10:05 新增协作成员</li>
-              <li>11:30 同步到共享空间</li>
-            </ul>
-          </div>
-        </aside>
-      </div>
+      </section>
     </main>
   </div>
   <script src="app.js"></script>
